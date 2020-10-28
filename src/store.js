@@ -1,11 +1,11 @@
-import { observable, action, decorate } from "mobx";
+import { observable, action, makeObservable } from "mobx";
 class KeywordStore {
   keyword = "";
   setKeyword(keyword) {
     this.keyword = keyword;
   }
 }
-KeywordStore = decorate(KeywordStore, {
+KeywordStore = makeObservable(KeywordStore, {
   keyword: observable,
   setKeyword: action
 });
